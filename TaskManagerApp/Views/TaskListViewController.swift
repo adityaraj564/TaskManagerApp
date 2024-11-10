@@ -44,7 +44,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
                     self.tableView.reloadData()
                 }
             }
-            
             navigationController?.pushViewController(addTaskVC, animated: true)
         }
     }
@@ -75,10 +74,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         taskDetailVC.task = task
-        taskDetailVC.updateFlag = true
         taskDetailVC.onTaskUpdated = { updatedTask in
             if let index = self.tasks.firstIndex(where: { $0.id == updatedTask.id }) {
                 self.tasks[index] = updatedTask // Update the task in the array
+                print("Data updated")
                 DispatchQueue.main.async {
                     self.tableView.reloadData() // Refresh table view
                 }

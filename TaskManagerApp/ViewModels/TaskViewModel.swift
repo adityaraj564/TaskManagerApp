@@ -20,7 +20,13 @@ class TaskViewModel {
 
     func addTask(_ task: Task, completion: @escaping () -> Void) {
         taskService.addTask(task) { [weak self] success in
-            if success { self?.fetchTasks(completion: completion) }
+            if success {
+                self?.tasks.append(task)  // Directly append task
+                print("Task added successfully to Firebase")
+                completion()
+            } else {
+                print("Error: Task not added")
+            }
         }
     }
 

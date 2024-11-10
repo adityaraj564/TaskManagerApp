@@ -22,7 +22,6 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     var onTaskDeleted: ((Task) -> Void)?
     private var viewModel: TaskViewModel
     var task: Task?
-    var updateFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +52,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Setup UI
     private func setupUI() {
         title = "Add Task"
-        if updateFlag {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveNewTask))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTask))
-        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTask))
         completeSwitch.isOn = task?.isCompleted ?? false
         // Customize due date picker (optional)
         if let dueDatePicker = dueDatePicker {
@@ -81,68 +76,20 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // MARK: - Save Task
+    
     @objc private func saveTask() {
-        // Validate inputs
-        guard let title = titleTextField.text, !title.isEmpty,
-              let description = descriptionTextField.text, !description.isEmpty else {
+        guard let newTask = buildTask() else {
             showAlert(message: "Please fill in all fields.")
             return
         }
-        // Get due date and priority
-        let dueDate = dueDatePicker.date
-        let priority: Task.Priority = {
-            switch prioritySegmentedControl.selectedSegmentIndex {
-            case 0: return .low
-            case 1: return .medium
-            default: return .high
-            }
-        }()
-        
-        // Create a new Task instance
-        let newTask = Task(id: UUID().uuidString, title: title, description: description, dueDate: dueDate, priority: priority, isCompleted: true)
-        
-        // Pass the task back using the callback
-        onTaskAdded?(newTask)
-        
-        // Dismiss or pop the view controller
-        navigationController?.popViewController(animated: true)
-    }
-    
-    // MARK: - Helper Functions
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    
-    @objc private func saveNewTask() {
-        let priority: Task.Priority = {
-            switch prioritySegmentedControl.selectedSegmentIndex {
-            case 0: return .low
-            case 1: return .medium
-            default: return .high
-            }
-        }()
-        
-        // Create a new task or update the existing task
-        let newTask = Task(
-            id: task?.id ?? UUID().uuidString,
-            title: titleTextField.text ?? "Untitled",
-            description: descriptionTextField.text,
-            dueDate: dueDatePicker.date,
-            priority: priority,
-            isCompleted: completeSwitch.isOn
-        )
-        
         if let existingTask = task {
             viewModel.updateTask(newTask) {
-                self.onTaskUpdated?(newTask) // Trigger the update closure
+                self.onTaskUpdated?(newTask)
                 self.navigationController?.popViewController(animated: true)
             }
         } else {
             viewModel.addTask(newTask) {
-                self.onTaskUpdated?(newTask)
+                self.onTaskAdded?(newTask)
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -155,5 +102,36 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    // MARK: - Helper Functions
+    private func buildTask() -> Task? {
+        guard let title = titleTextField.text, !title.isEmpty,
+              let description = descriptionTextField.text, !description.isEmpty else { return nil }
+        
+        let priority: Task.Priority = {
+                   switch prioritySegmentedControl.selectedSegmentIndex {
+                   case 0: return .low
+                   case 1: return .medium
+                   default: return .high
+                   }
+               }()
+        let newTask = Task(
+            id: task?.id ?? UUID().uuidString,
+            title: title,
+            description: description,
+            dueDate: dueDatePicker.date,
+            priority: priority,
+            isCompleted: completeSwitch.isOn
+        )
+        
+        return newTask
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
 }
 

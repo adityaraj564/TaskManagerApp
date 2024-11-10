@@ -31,13 +31,16 @@ class TaskViewModel {
     }
 
     func deleteTask(_ taskId: String, completion: @escaping () -> Void) {
-        taskService.deleteTask(taskId) { [weak self] success in
-            if success { self?.fetchTasks(completion: completion) }
+        taskService.deleteTask(taskId) { success in
+            print("Delete callback reached, success: \(success)")
+            if success {
+                print("Task deleted successfully")
+                completion()
+            } else {
+                print("Failed to delete task.")
+            }
         }
-        if let index = tasks.firstIndex(where: { $0.id == taskId }) {
-            tasks.remove(at: index)
-            completion()
-        }
+        completion()
     }
 
     func updateTask(_ task: Task, completion: @escaping () -> Void) {

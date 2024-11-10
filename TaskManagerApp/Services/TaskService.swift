@@ -30,7 +30,11 @@ class TaskService {
 
     func deleteTask(_ taskId: String, completion: @escaping (Bool) -> Void) {
         db.collection("tasks").document(taskId).delete { error in
-            completion(error == nil)
+            if error == nil {
+                completion(true)
+            } else {
+                print("Deletion Failed to firebase \(error)")
+            }
         }
     }
 

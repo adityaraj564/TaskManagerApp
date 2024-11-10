@@ -139,6 +139,5 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-
 }
 

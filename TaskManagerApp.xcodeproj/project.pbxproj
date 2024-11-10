@@ -16,7 +16,6 @@
 		189B553D2CDD23BF00541843 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B553C2CDD23BF00541843 /* TaskViewModel.swift */; };
 		189B553F2CDD23D600541843 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B553E2CDD23D600541843 /* AuthViewModel.swift */; };
 		189B55412CDD23F300541843 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55402CDD23F300541843 /* TaskListViewController.swift */; };
-		189B55432CDD240400541843 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55422CDD240400541843 /* TaskDetailViewController.swift */; };
 		189B55452CDD241300541843 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55442CDD241300541843 /* LoginViewController.swift */; };
 		189B55472CDD242200541843 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55462CDD242200541843 /* TaskService.swift */; };
 		189B55492CDD242F00541843 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55482CDD242F00541843 /* AuthService.swift */; };
@@ -41,7 +40,6 @@
 		189B553C2CDD23BF00541843 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		189B553E2CDD23D600541843 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		189B55402CDD23F300541843 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
-		189B55422CDD240400541843 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		189B55442CDD241300541843 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		189B55462CDD242200541843 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		189B55482CDD242F00541843 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				189B55402CDD23F300541843 /* TaskListViewController.swift */,
-				189B55422CDD240400541843 /* TaskDetailViewController.swift */,
 				189B55442CDD241300541843 /* LoginViewController.swift */,
 				189B55572CDFCF2100541843 /* AddTaskViewController.swift */,
 			);
@@ -227,7 +224,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				189B55472CDD242200541843 /* TaskService.swift in Sources */,
-				189B55432CDD240400541843 /* TaskDetailViewController.swift in Sources */,
 				189B55492CDD242F00541843 /* AuthService.swift in Sources */,
 				189B553D2CDD23BF00541843 /* TaskViewModel.swift in Sources */,
 				189B55202CDD230400541843 /* AppDelegate.swift in Sources */,

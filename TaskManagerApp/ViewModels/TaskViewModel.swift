@@ -28,12 +28,20 @@ class TaskViewModel {
         taskService.deleteTask(taskId) { [weak self] success in
             if success { self?.fetchTasks(completion: completion) }
         }
+        if let index = tasks.firstIndex(where: { $0.id == taskId }) {
+            tasks.remove(at: index)
+            completion()
+        }
     }
 
     func updateTask(_ task: Task, completion: @escaping () -> Void) {
         taskService.updateTask(task) { [weak self] success in
             if success { self?.fetchTasks(completion: completion) }
         }
+        if let index = self.tasks.firstIndex(where: { $0.id == task.id }) {
+             // Update the task in the local array
+             self.tasks[index] = task
+         }
     }
 }
 

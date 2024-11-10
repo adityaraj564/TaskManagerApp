@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		189B55202CDD230400541843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B551F2CDD230400541843 /* AppDelegate.swift */; };
 		189B55222CDD230400541843 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55212CDD230400541843 /* SceneDelegate.swift */; };
-		189B55242CDD230400541843 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55232CDD230400541843 /* ViewController.swift */; };
-		189B55272CDD230400541843 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 189B55262CDD230400541843 /* Base */; };
 		189B552A2CDD230400541843 /* TaskManagerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189B55282CDD230400541843 /* TaskManagerApp.xcdatamodeld */; };
 		189B552C2CDD230600541843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189B552B2CDD230600541843 /* Assets.xcassets */; };
 		189B552F2CDD230600541843 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 189B552E2CDD230600541843 /* Base */; };
@@ -26,14 +24,15 @@
 		189B55502CDF4EEA00541843 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 189B554F2CDF4EEA00541843 /* FirebaseFirestore */; };
 		189B55522CDF573000541843 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 189B55512CDF573000541843 /* FirebaseCore */; };
 		189B55542CDF5EB100541843 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189B55532CDF5EB100541843 /* GoogleService-Info.plist */; };
+		189B55562CDF8F5800541843 /* TaskDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55552CDF8F5800541843 /* TaskDetailModel.swift */; };
+		189B55582CDFCF2100541843 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B55572CDFCF2100541843 /* AddTaskViewController.swift */; };
+		189B555C2CDFDA2D00541843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B555B2CDFDA2D00541843 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		189B551C2CDD230400541843 /* TaskManagerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManagerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189B551F2CDD230400541843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		189B55212CDD230400541843 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		189B55232CDD230400541843 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		189B55262CDD230400541843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		189B55292CDD230400541843 /* TaskManagerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskManagerApp.xcdatamodel; sourceTree = "<group>"; };
 		189B552B2CDD230600541843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189B552E2CDD230600541843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,9 @@
 		189B55462CDD242200541843 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
 		189B55482CDD242F00541843 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		189B55532CDF5EB100541843 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		189B55552CDF8F5800541843 /* TaskDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailModel.swift; sourceTree = "<group>"; };
+		189B55572CDFCF2100541843 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		189B555B2CDFDA2D00541843 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +92,7 @@
 				189B55372CDD233E00541843 /* ViewModels */,
 				189B55382CDD234700541843 /* Views */,
 				189B55392CDD235000541843 /* Services */,
-				189B55232CDD230400541843 /* ViewController.swift */,
-				189B55252CDD230400541843 /* Main.storyboard */,
+				189B555B2CDFDA2D00541843 /* Main.storyboard */,
 				189B552B2CDD230600541843 /* Assets.xcassets */,
 				189B552D2CDD230600541843 /* LaunchScreen.storyboard */,
 				189B55302CDD230600541843 /* Info.plist */,
@@ -104,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				189B553A2CDD239F00541843 /* Task.swift */,
+				189B55552CDF8F5800541843 /* TaskDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +125,7 @@
 				189B55402CDD23F300541843 /* TaskListViewController.swift */,
 				189B55422CDD240400541843 /* TaskDetailViewController.swift */,
 				189B55442CDD241300541843 /* LoginViewController.swift */,
+				189B55572CDFCF2100541843 /* AddTaskViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,7 +215,7 @@
 				189B552C2CDD230600541843 /* Assets.xcassets in Resources */,
 				189B55542CDF5EB100541843 /* GoogleService-Info.plist in Resources */,
 				189B552F2CDD230600541843 /* Base in Resources */,
-				189B55272CDD230400541843 /* Base in Resources */,
+				189B555C2CDFDA2D00541843 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,30 +228,23 @@
 			files = (
 				189B55472CDD242200541843 /* TaskService.swift in Sources */,
 				189B55432CDD240400541843 /* TaskDetailViewController.swift in Sources */,
-				189B55242CDD230400541843 /* ViewController.swift in Sources */,
 				189B55492CDD242F00541843 /* AuthService.swift in Sources */,
 				189B553D2CDD23BF00541843 /* TaskViewModel.swift in Sources */,
 				189B55202CDD230400541843 /* AppDelegate.swift in Sources */,
 				189B553F2CDD23D600541843 /* AuthViewModel.swift in Sources */,
 				189B553B2CDD239F00541843 /* Task.swift in Sources */,
+				189B55562CDF8F5800541843 /* TaskDetailModel.swift in Sources */,
 				189B55412CDD23F300541843 /* TaskListViewController.swift in Sources */,
 				189B552A2CDD230400541843 /* TaskManagerApp.xcdatamodeld in Sources */,
 				189B55452CDD241300541843 /* LoginViewController.swift in Sources */,
 				189B55222CDD230400541843 /* SceneDelegate.swift in Sources */,
+				189B55582CDFCF2100541843 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		189B55252CDD230400541843 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				189B55262CDD230400541843 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		189B552D2CDD230600541843 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

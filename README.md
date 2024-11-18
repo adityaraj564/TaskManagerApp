@@ -15,11 +15,13 @@ This project is a case study implementation of a **Swift-based iOS app** for man
   - Due date
   - Priority level (Low, Medium, High)
  
-  - ## Preview
+## Preview
 
-
+<img src="resources/previewTaskManager.gif" width="240">
 
 ## Screenshots
+
+<img src="resources/screenshot-TM1.png" width="240"> <img src="resources/screenshot-TM2.png" width="240"> <img src="resources/screenshot-TM3.png" width="240"> <img src="resources/screenshot-TM4.png" width="240"> <img src="resources/screenshot-TM5.png" width="240"> <img src="resources/screenshot-TM6.png" width="240">
 
 
 ### 2. **Offline Support**
